@@ -363,33 +363,38 @@
 </div>
 
 <script>
+  // Reference elements
   var modal = document.getElementById("videoModal");
   var btn = document.getElementById("openModalBtn");
   var span = document.getElementsByClassName("modal-close-button")[0];
   var videoIframe = document.getElementById("videoIframe");
 
+  // Function to handle modal open
   btn.onclick = function () {
       modal.style.display = "block";
-      videoIframe.src += "?autoplay=1"; // Add autoplay parameter
-  }
+      videoIframe.src = videoIframe.src.split('?')[0] + "?autoplay=1"; // Autoplay with sound
+  };
 
+  // Function to handle modal close
   span.onclick = function () {
       modal.style.display = "none";
       stopVideo();
-  }
+  };
 
+  // Close modal if clicking outside it
   window.onclick = function (event) {
       if (event.target == modal) {
           modal.style.display = "none";
           stopVideo();
       }
-  }
+  };
 
+  // Function to stop video playback
   function stopVideo() {
-      videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+      videoIframe.src = videoIframe.src.split('?')[0]; // Reset source to stop playback
   }
 
-  // Existing functions...
+  // Existing animation logic
   function toggleTextAndIcon() {
       const typewriter = document.querySelector('.typewriter-animation-style');
       const videoIcon = document.querySelector('.hidden-video-icon-style');
@@ -415,6 +420,7 @@
       }, 8000);
   }
 
+  // Initialize animations on load
   window.onload = function () {
       setTimeout(function () {
           handleButtonFade();
@@ -423,11 +429,9 @@
               handleButtonFade();
           }, 10000);
       }, 1000);
-  }
-  function stopVideo() {
-    videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
-}
-  </script>
+  };
+</script>
+
 
     <!--=============== SECTION 1 START ===============-->
     <section class="sec-01 d-flex align-items-center justify-content-center">
