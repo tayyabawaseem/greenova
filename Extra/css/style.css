@@ -1,0 +1,122 @@
+/************************** 
+* imported styles 
+***************************/
+
+@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400,400italic,700italic,700,900,900italic);
+/* monoserrat font styles */
+@import url(../fonts/montserrat/montserrat-bold/styles.css);
+@import url(../fonts/montserrat/montserrat-light/styles.css);
+@import url(../fonts/montserrat/montserrat-regular/styles.css);
+@import url(../fonts/montserrat/montserrat-semibold/styles.css);
+@import url(../assets/bootstrap/css/bootstrap.min.css);
+@import url(../assets/font-awesome/css/font-awesome.min.css);
+@import url(../assets/bootstrap-select/dist/css/bootstrap-select.min.css);
+@import url(../assets/revolution/css/settings.css);
+@import url(../assets/revolution/css/layers.css);
+@import url(../assets/revolution/css/navigation.css);
+@import url(../assets/lsp-icon/style.css);
+@import url(../assets/owl.carousel-2/assets/owl.carousel.css);
+@import url(../assets/owl.carousel-2/assets/owl.theme.default.min.css);
+@import url(../assets/nouislider/nouislider.css);
+@import url(../assets/nouislider/nouislider.pips.css);
+@import url(../assets/bootstrap-touch-spin/jquery.bootstrap-touchspin.css);
+@import url(../assets/masterslider/style/masterslider.css);
+@import url(../assets/masterslider/skins/default/style.css);
+@import url(../assets/masterslider/staffcarousel/style/ms-staff-style.css);
+@import url(../assets/bxslider/dist/jquery.bxslider.min.css);
+@import url(../assets/Magnific-Popup-master/dist/magnific-popup.css);
+@import url(../assets/animate.min.css);
+@import url(../assets/Polyglot-Language-Switcher-master/css/polyglot-language-switcher.css);
+/************************** 
+* Miscelnious styles 
+***************************/
+.sec-pad {
+  padding: 70px 0;
+}
+.has-black-color-overlay {
+  position: relative;
+}
+.has-black-color-overlay:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .5;
+  background: #000000;
+}
+.has-black-color-overlay .container {
+  position: relative;
+  z-index: 2;
+}
+
+.has-dark-texture {
+  background: #1f1f1f url(../img/textures/dark-texture.jpg) 0 0 repeat;
+}
+
+.has-gray-texture {
+  background: #f7f7f7 url(../img/textures/light-texture.jpg) 0 0 repeat;
+}
+
+.has-gray-texture2 {
+  background: #f7f7f7 url(../img/textures/crossward.jpg) 0 0 repeat;
+}
+
+.footer-widget
+{
+    border-color: #A8C41B;
+}
+
+.thm-btn {
+  text-align: center;
+  outline: none;
+  font-size: 14px;
+  color: #FFFFFF;
+  display: inline-block;
+  line-height: 53px;
+  font-weight: bold;
+  font-family: "Lato", sans-serif;
+  text-transform: uppercase;
+  padding: 0 40.93px;
+  border: 2px solid #A8C41B;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  transition: background .4s ease, border .4s ease, color .4s ease !important;
+}
+.thm-btn:hover {
+  background-color: #1F1F1F;
+  border: 2px solid #1F1F1F;
+  color: #fff;
+}
+.thm-btn.inverse {
+  background-color: #1F1F1F;
+  border: 2px solid #1F1F1F;
+  color: #fff;
+}
+.thm-btn.inverse:hover {
+  border: 2px solid #A8C41B;
+  color: #fff;
+}
+.thm-btn.borderd {
+  background: transparent;
+  border: 2px solid #A8C41B;
+}
+.thm-btn.borderd:hover {
+  border: 2px solid #1f1f1f;
+  color: #1f1f1f;
+}
+.thm-btn.borderd.inverse {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+.thm-btn.borderd.inverse:hover {
+  border: 2px solid #A8C41B;
+}
+
+.rev_slider .thm-btn.borderd.inverse:hover,
+.fixed-banner .thm-btn.borderd.inverse:hover{
+	color:#ffffff !important;	
+}

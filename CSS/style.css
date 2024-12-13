@@ -1,0 +1,1039 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 50%;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #A4783F, #be853a);
+  border-radius: 10px;
+  border-color: #adadad;
+  border-style: ridge;
+  border-width: 1.5px;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body, html {
+  overflow-x: hidden;
+}
+
+/* =============== Navbar Start =============== */
+
+
+/* Logo  */
+nav .logo {
+  width: 20%;
+  height: 80px;
+
+}
+
+nav .logo img {
+
+  width: 5%;
+  height: 75px;
+  position: absolute;
+  top: 2px;
+  left: 30px;
+
+}
+
+nav .logo h1 {
+  font-size: 18px !important ;
+  position: absolute;
+  top: 45px ;
+  left: 37px;
+  color: #fff;
+
+
+}
+
+/* @media (max-width:600px) {
+  nav .logo img {
+    width: 40px;
+    height: 70px;
+    z-index: 1111;
+  }
+}
+
+@media (max-width:600px) {
+
+  nav .logo .text-light {
+    font-size: 7px;
+    z-index: 1111;
+
+  }
+} */
+
+@media (max-width: 970px) {
+  nav .logo img {
+    width: 40px;
+    height: 70px;
+    z-index: 1111;
+    top: 4px;
+  }
+
+  nav .logo h1 {
+    font-size: 7px;
+    z-index: 1111;
+    font-weight: 300;
+
+  }
+}
+
+/* Logo */
+
+/* Nav */
+nav {
+  top: 0%;
+  width: 100%;
+  /* height: 80px; */
+  backdrop-filter: blur(50px);
+  box-shadow: 0 0 15px -6px #1d1a1a;
+  background: #2d683c;
+  left: 0px;
+  z-index: 11111111;
+}
+
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: -100%;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+  transition: .5s;
+
+
+}
+
+nav:hover:before {
+  left: 100%;
+}
+
+nav {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+
+}
+
+nav .wrapper {
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 20px;
+  height: 80px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+/* Nav */
+
+/* .wrapper .logo a{
+  color: #f2f2f2;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+} */
+
+/* nav links */
+
+.wrapper .nav-links {
+  display: inline-flex;
+}
+
+.nav-links li {
+  list-style: none;
+  margin-top: 20px;
+
+}
+
+.nav-links li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 9px 5px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+
+}
+
+.nav-links li a:hover {
+
+  -webkit-text-fill-color: #7dd192;
+
+}
+
+.nav-links .mobile-item {
+  display: none;
+}
+
+/* .nav-links .drop-menu{
+  position: absolute;
+  background: #242526;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+} */
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box {
+  transition: all 0.3s ease;
+  top: 80px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* .drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+} */
+.mega-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 80px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mega-box .content {
+  background-color: rgba(45, 104, 60, 0.70);
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.50);
+  border-radius: 30px;
+}
+
+.mega-box .content .row {
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content .row header {
+  color: #f2f2f2;
+  font-size: 1px;
+  font-weight: 500;
+}
+
+.content .row .mega-links {
+  margin-left: -40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.row .mega-links li {
+  padding: 0 20px;
+}
+
+.row .mega-links li a {
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 13px;
+  display: block;
+}
+
+.row .mega-links li a:hover {
+  color: #f2f2f2;
+}
+
+.wrapper .btn {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+/* .wrapper .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+} */
+
+
+/* Button */
+.wrapper .btn {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+
+/* Button */
+
+/* <!--=============== Media Querry Start ===============--> */
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn {
+    display: block;
+
+  }
+
+  .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 250px;
+    top: 0;
+    left: -100%;
+    /* background-color: rgba(45, 104, 60, 0.70); */
+    background-color: rgba(46, 43, 43, 0.637);
+    box-shadow: 0px 50px 20px rgb(0, 0, 0, 0.20);
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    /* box-shadow: 0px 15px 15px rgba(0,0,0,0.18); */
+    transition: all 0.3s ease;
+
+  }
+
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(46, 43, 43, 0.637);
+    box-shadow: 0px 50px 20px rgb(0, 0, 0, 0.20);
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(46, 43, 43, 0.637);
+  }
+
+  /* custom scroll bar */
+
+  #menu-btn:checked~.nav-links {
+    left: 0%;
+  }
+
+  #menu-btn:checked~.btn.menu-btn {
+    display: none;
+  }
+
+  #close-btn:checked~.btn.menu-btn {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 30px 0px;
+    margin-bottom: -15px;
+  }
+
+  .nav-links li a {
+    padding: 0px 10px;
+    display: block;
+    font-size: 16px;
+  }
+
+  .nav-links .drop-menu {
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+
+  #showDrop:checked~.drop-menu,
+  #showMega:checked~.mega-box {
+    max-height: 100%;
+  }
+
+  .nav-links .desktop-item {
+    display: none;
+  }
+
+  .nav-links .mobile-item {
+    display: block;
+    color: #f2f2f2;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    padding-left: 10px;
+  }
+
+  .nav-links .mobile-item:hover {
+    -webkit-text-fill-color: #7dd192;
+  }
+
+  .drop-menu li {
+    margin: 0;
+  }
+
+  .drop-menu li a {
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .mega-box {
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mega-box .content {
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+    background: none;
+
+  }
+
+  .mega-box .content .row {
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2) {
+    border-top: 0px;
+  }
+
+  .content .row .mega-links {
+    border-left: 0px;
+    padding-left: 28px;
+  }
+
+  .row .mega-links li {
+    margin: 0;
+
+  }
+
+  .content .row header {
+    font-size: 19px;
+    padding-left: 0;
+
+  }
+}
+
+nav input {
+  display: none;
+}
+
+/* =============== Navbar End =============== */
+
+/* <!--=============== Banner Start ===============--> */
+
+/* .Ban {
+  position: static;
+
+
+}
+
+#image1 {
+  width: 100%;
+  height: 99vh;
+  background-image: url('../Images/Banner/hand-holding-small-tree-planting-concept-green-world_34152-1480.avif');
+  background-size: 100% 100%;
+
+}
+
+#image2 {
+  width: 100%;
+  height: 99vh;
+  background-image: url('../Images/Banner/nursery-plants-terraceterrace-garden_989332-62.jpg');
+  background-size: 100% 100%;
+} */
+
+/* #image3 {
+  width: 100%;
+  height: 99vh;
+  background-image: url('https://img.freepik.com/premium-photo/young-woman-planting-seedlings-gardengenerative-ai_841229-12243.jpg?w=996');
+  background-size: 100% 100%;
+} */
+/* 
+#image4 {
+  width: 100%;
+  height: 99vh;
+  background-image: url('../Images/Banner/gasoline-shrub-trimmer.avif');
+  background-size: 100% 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  background-color: transparent;
+  margin-left: -130px;
+  margin-bottom: 100px;
+  width: 45%;
+
+}
+
+.carousel-inner h1 {
+  margin-top: 5%;
+  padding-bottom: 3%;
+  font-size: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.text-bx {
+  background-color: #000000;
+  margin-bottom: 5%;
+  padding-left: -120px;
+  font-size: 20px;
+
+
+}
+
+#p1 {
+  margin-top: 40%;
+  color: aliceblue;
+  margin-left: 25%;
+  width: 39%;
+  text-shadow: 0px -15px 10px #000000;
+  font-size: 20px;
+} */
+
+/* Media Querry */
+
+/* @media (max-width: 733px) {
+  .carousel-inner h1 {
+    font-size: 20px;
+    position: absolute;
+    margin-left: -10px;
+    margin-top: -38px;
+    width: 130%;
+    background-color: #A4783F; 
+  }
+
+  .text-bx {
+    margin-left: 15px;
+    font-size: 17px;
+    width: 120%;
+    margin-bottom: -15px;
+  }
+
+  #p1 {
+    background-color: #1d1a1a;
+    width: 50vw;
+    font-size: 1rem;
+    margin-top: 70vh;
+  } */
+
+  /* #s {
+    font-size: 2rem;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -25%;
+    width: 70vw;
+   background-color: #A4783F; *
+  }
+
+  #p2 {
+    margin-left: 12vw;
+    font-size: 1em;
+    width: 50vw;
+    background-color: #1d1a1a; 
+    margin-bottom: -35px;
+  }
+
+}
+
+
+@media (max-width: 575.98px) {
+  .carousel-inner h1 {
+    font-size: 30px;
+    position: absolute;
+    margin-left: 18px;
+
+    width: 130%;
+  }
+
+  .text-bx {
+    margin-left: 15px;
+    margin-top: 45px;
+    font-size: 11px;
+
+    width: 130%;
+
+  }
+
+
+}
+
+@media (max-width:320px) {
+
+  .carousel-caption {
+    width: 90%;
+  }
+
+  .carousel-inner h1 {
+    font-size: 1em;
+    margin-left: 55px;
+    width: 60%;
+    padding-left: 45px;
+    margin-top: -10px;
+
+  }
+
+  #s {
+    margin-top: 45px;
+
+  }
+
+  .text-bx {
+    font-size: 8px;
+    width: 60%;
+    margin-left: 75px;
+
+
+  }
+
+  #p1 {
+    margin-top: 125vw;
+    width: 90vw;
+    font-size: 0.90em;
+    margin-left: 15px;
+  }
+
+  #s {
+    font-size: 1em;
+    position: absolute;
+    margin-left: 50px;
+    margin-top: -15%;
+    width: 80vw;
+
+  }
+
+  #p2 {
+
+    font-size: .90em;
+    width: 90vw;
+    margin-left: 80px;
+    margin-top: 10px;
+
+  }
+} */
+
+/* Media Querry */
+
+/* #carousel
+{
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #00ff40;
+  border: 3px solid #000000;
+} */
+
+
+
+
+
+/* <!--=============== Banner End ===============--> */
+
+
+/* Preloader Styles */
+#preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.89);
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all .5s .5s ease;
+  -moz-transition: all .5s .5s ease;
+  transition: all .5s .2s ease;
+  filter: blur(0px); /* Initial blur effect */
+}
+.loader{
+  position:absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: auto;
+  margin-top: -30px;
+}
+body.loaded #preloader{
+  opacity: 0;
+  visibility: hidden;
+  filter: blur(10px); /* Blur effect when loaded */
+  transition: opacity 0.5s, visibility 0s 0.5s, filter 0.5s; /* Smooth transition */
+
+}
+ 
+.pre
+{
+  /* width: 500px; */
+  height: 200px;
+}
+
+
+/* slider section  */
+
+.slider-1{
+  height: 100vh;
+  margin-top: 0px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.slider-1 .list-1 .item-1{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
+}
+.slider-1 .list-1 .item-1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-1 .list-1 .item-1 .content{
+  position: absolute;
+  top: 43%;
+  width: 1140px;
+  max-width: 80%;
+  left: 40%;
+  transform: translateX(-50%);
+  padding-right: 30%;
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 0 5px 10px #0004;
+  text-align: center;
+  
+}
+
+.slider-1 .list-1 .item-1 .content .title,
+.slider-1 .list-1 .item-1 .content .type{
+  font-size: 4em;
+  font-weight: bold;
+  line-height: 1.3em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+}
+.slider-1 .list-1 .item-1 .type{
+  color: #14ff62cb;
+}
+.slider-1 .list-1 .item-1 .button{
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  grid-template-rows: 40px;
+  gap: 5px;
+  margin-top: 20px;
+}
+.slider-1 .list-1 .item-1 .button button{
+  border: none;
+  background-color: #eee;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.4s;
+  letter-spacing: 2px;
+}
+
+
+.slider-1 .list-1 .item-1 .button button:hover{
+  letter-spacing: 3px;
+}
+.slider-1 .list-1 .item-1 .button button:nth-child(2){
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #eee;
+}
+
+
+
+
+
+/* Thumbnail Section  */
+.thumbnail{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: max-content;
+  z-index: 100;
+  display: flex;
+  gap: 20px;
+}
+
+.thumbnail .item-1{
+  width: 150px;
+  height: 220px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.thumbnail .item-1 img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* nextPrevArrows Section  */
+.nextPrevArrows{
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  z-index: 100;
+  width: 300px;
+  max-width: 30%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nextPrevArrows button{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #14ff72cb;
+  border: none;
+  color: #fff;
+  font-family: monospace;
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+}
+.nextPrevArrows button:hover{
+  background-color: #fff;
+  color: #000;
+}
+
+/* Animation Part */
+.slider-1 .list-1 .item-1:nth-child(1){
+  z-index: 1;
+}
+
+
+/* animation text in first item */
+.slider-1 .list-1 .item-1:nth-child(1) .content .title,
+.slider-1 .list-1 .item-1:nth-child(1) .content .type,
+.slider-1 .list-1 .item-1:nth-child(1) .content .description,
+.slider-1 .list-1 .item-1:nth-child(1) .content .buttons
+{
+  transform: translateY(50px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+  to{
+      transform: translateY(0px);
+      filter: blur(0px);
+      opacity: 1;
+  }
+}
+.slider-1 .list-1 .item-1:nth-child(1) .content .title{
+  animation-delay: 0.4s !important;
+}
+.slider-1 .list-1 .item-1:nth-child(1) .content .type{
+  animation-delay: 0.6s !important;
+}
+.slider-1 .list-1 .item-1:nth-child(1) .content .description{
+  animation-delay: 0.8s !important;
+}
+.slider-1 .list-1 .item-1:nth-child(1) .content .buttons{
+  animation-delay: 1s !important;
+}
+
+
+
+
+/* Animation for next button click */
+.slider-1.next .list-1 .item-1:nth-child(1) img{
+  width: 150px;
+  height: 220px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  border-radius: 30px;
+  animation: showImage .5s linear 1 forwards;
+}
+
+@keyframes showImage{
+  to{
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+  }
+}
+
+.slider-1.next .thumbnail .item-1:nth-last-child(1){
+  overflow: hidden;
+  animation: showThumbnail .5s linear 1 forwards;
+}
+.slider-1.prev .list-1 .item-1 img{
+  z-index: 100;
+}
+
+
+@keyframes showThumbnail{
+  from{
+      width: 0;
+      opacity: 0;
+  }
+}
+
+
+.slider-1.next .thumbnail{
+  animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+  from{
+      transform: translateX(150px);
+  }
+}
+
+
+
+/* Animation for prev button click */
+.slider-1.prev .list-1 .item-1:nth-child(2){
+  z-index: 2;
+}
+
+.slider-1.prev .list .item:nth-child(2) img{
+  animation: outFrame 0.5s linear 1 forwards;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@keyframes outFrame{
+  to{
+      width: 150px;
+      height: 220px;
+      bottom: 50px;
+      left: 50%;
+      border-radius: 20px;
+  }
+}
+
+.slider-1.prev .thumbnail .item-1:nth-child(1){
+  overflow: hidden;
+  opacity: 0;
+  animation: showThumbnail .5s linear 1 forwards;
+}
+.slider-1.next .nextPrevArrows button,
+.slider-1.prev .nextPrevArrows button{
+  pointer-events: none;
+}
+
+
+.slider-1.prev .list-1 .item-1:nth-child(2) .content .title,
+.slider-1.prev .list-1 .item-1:nth-child(2) .content .type,
+.slider-1.prev .list-1 .item-1:nth-child(2) .content .description,
+.slider-1.prev .list-1 .item-1:nth-child(2) .content .buttons
+{
+  animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+  to{
+      transform: translateY(-150px);
+      filter: blur(20px);
+      opacity: 0;
+  }
+}
+@media screen and (max-width: 678px) {
+  .slider-1 .list-1 .item-1 .content {
+      padding-right: 0;
+      margin-top: 0px; /* Reduce the top margin */
+     
+     
+  }
+  .slider-1 .list-1 .item-1 .content .title {
+      font-size: 30px; /* Decrease the font size */
+  }
+  .slider-1 .list-1 .item-1 .content .type {
+      font-size: 20px; /* Decrease the font size */
+  }
+  .slider-1 .list-1 .item-1 .content .description {
+      font-size: 16px; /* Decrease the font size */
+      margin-top: 10px; /* Adjust the margin top for description */
+  }
+}
+
+
+
+/* Additional Media Queries for 320px screen size */
+@media only screen and (max-width: 320px) {
+  .slider-1 .list-1 .item-1 .content {
+    position: absolute;
+    margin-left: 20px; /* Decrease padding */
+    margin-top: -15px; /* Decrease margin top */
+  }
+  .slider-1 .list-1 .item-1 .content .title {
+    font-size: 20px; /* Further decrease font size */
+  }
+  .slider-1 .list-1 .item-1 .content .type {
+    font-size: 14px; /* Further decrease font size */
+  }
+  .slider-1 .list-1 .item-1 .content .description {
+    font-size: 12px; /* Further decrease font size */
+    margin-top: 5px; /* Decrease margin top */
+  }
+  .thumbnail .item-1 {
+    width: 100px; /* Decrease width */
+    height: 150px; /* Decrease height */
+  }
+}
+
+

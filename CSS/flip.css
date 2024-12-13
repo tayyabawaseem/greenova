@@ -1,0 +1,217 @@
+ /* <!--=============== Section 2 End ===============--> */
+
+
+ /* Heading */
+ .ht
+ {
+   width: 100%;
+   color: rgba(79, 45, 45, 0.752);
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 50px;
+   text-align: center;
+   padding-bottom: 10px;
+   font-style: italic;
+   /* background-color: #000; */
+   /* margin-top: 0px; */
+ 
+ }
+  /* Heading */
+ 
+  img{
+     max-width: 100%;
+     vertical-align: middle;
+ }
+  .row .row-1{
+     display: flex;
+     flex-wrap: wrap;
+ }
+  .container-fluid{
+     max-width: 1170px;
+     margin:auto;
+     /* margin-top: 55%; */
+   
+   
+ }
+  .flip-main{
+     min-height: 100vh;
+     /* padding: 100px 0; */
+ }
+ 
+  .flip-main .flip-card{
+     flex:0 0 calc(33.33% - 30px);
+     margin:0 15px 30px;
+     perspective: 1000px; /*remove this if you dont want the 3d effect*/
+   
+ }
+  .flip-main .flip-card-inner{
+     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.7);
+     position: relative;
+     transform-style: preserve-3d;
+     transition: all 1s ease;
+     border-radius: 20px;
+ }
+ 
+  .flip-main .flip-card-front img{
+     width: 100%;
+     height: 50vh;
+     border-radius: 20px;
+     box-shadow: 0px 0px 2px 1px rgba(68, 38, 38, 0.5);
+   
+ }
+ 
+  #Wheat
+ {   width: 100%;
+     height: 50vh;
+     background-image: url('../Images/Section/Seed.jpg');
+     border-radius: 20px;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;   
+ }
+  #Fruits
+ {   width: 100%;
+     height: 50vh;
+     background-image: url('../Images/Section/Fruit\ seed.webp');
+     border-radius: 20px;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;   
+ }
+  #vege
+ {   width: 100%;
+     height: 50vh;
+     background-image: url('../Images/Section/Basil\ Seeds.jpg');
+     border-radius: 20px;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;   
+    
+ }
+ 
+  .flip-main .flip-card-front,
+  .flip-main .flip-card-back{
+     backface-visibility: hidden;
+ }
+  .flip-main .flip-card-back{
+     background:linear-gradient(45deg,#257202 0%,#186804 100%);
+     position: absolute;
+     left:0;
+     top:0;
+     padding: 15px;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-align: center;
+     transform: rotateY(180deg);
+     border-radius: 20px;
+ }
+  .flip-main .flip-card-back .txt1 h3{
+     font-size: 30px;
+     color: #ffffff;
+     margin:0 0 5px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     letter-spacing: 1px;
+ }
+  .flip-main .flip-card-back .txt1 p{
+     font-size: 16px;
+     color: #e9e9e9;
+     margin:0;
+ }
+  .flip-main .flip-card-back .txt2 h3{
+     font-size: 25px;
+     color: #ffffff;
+       margin:0 0 5px;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     letter-spacing: 1px;
+ }
+  .flip-main .flip-card-back .txt2 p{
+     letter-spacing: 1px;
+     font-size: 13px;
+     text-align: center;
+     color: #e9e9e9;
+     margin:0;
+ }
+  .flip-main .flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+ }
+ 
+ 
+ /*responsive*/
+ @media(max-width: 991px){
+   .flip-main .flip-card {
+     flex: 0 0 calc(50% - 30px);
+   
+   }
+ }
+ @media(max-width: 767px){
+   .flip-main .flip-card {
+     flex: 0 0 calc(100% - 30px);
+   }	
+ }
+  .flip-card-back.button {
+     position: absolute;
+     /* margin-top: -2%; */
+  }
+   
+  
+ 
+  /* Button */
+  #butn {
+     position: absolute;
+     /* margin-top: -2%; */
+   }
+   
+   #butn .btn1 {
+   
+     position: relative;
+     bottom: -120px;
+     color: #fff; 
+     padding: 12px 38px;
+     background: linear-gradient(360deg, #1e6853, #1ca23c);
+     border-radius: 45px;
+     border: none;
+     font-size: 15px;
+     font-weight: 400;
+     text-decoration: none;
+     box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+     border-top: 1px solid rgba(0, 0, 0, 0.1);
+     backdrop-filter: blur(10px);
+    
+   
+   }
+   
+   .btn1::before {
+     content: '';
+     position: absolute;
+     top: 0%;
+     left: -20%;
+     width: 100%;
+     height: 45px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+     transition: .5s;
+     visibility: hidden;
+     border-radius: 40px;
+   
+   
+   
+   }
+   .btn1:hover:before {
+     left: 20%;
+     visibility: visible;
+   }
+   
+   @media (max-width: 767px) {
+     #butn.btn1{
+       left: 440px;
+     }
+   }
+   
+   @media (max-width: 600px) {
+     #butn .btn1 {
+       left: 10px;
+     }
+   }
+  /* Button */
+ 

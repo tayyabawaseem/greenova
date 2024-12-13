@@ -1,0 +1,239 @@
+@media (max-width: 1024px) {
+    .page_header{
+    
+        height: 100vh;
+      
+      
+        }
+    
+    .contact-head{
+        position: absolute;
+        font-size: 3.5em;
+        top: 33%;
+        left:43%;
+      
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 41%;
+        left:36%;
+        color:#f1f0ee!important;
+    
+    }
+}
+
+
+/* 1024 end */
+
+@media (max-width: 912px) {
+    .page_header{
+    
+        height: 100vh;
+      
+        }
+    .contact-head{
+        position: absolute;
+        font-size: 6em;
+        top:40%;
+        left:36%;
+       
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 5em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 47%;
+        left:21%;
+        color:#f1f0ee!important;
+      
+    }
+    
+}
+    
+    /* 912 end  */
+
+
+    @media (max-width: 768px) {
+
+        
+    .contact-head{
+        position: absolute;
+        font-size: 5em ;
+        top: 42%;
+        left:35%;
+    
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 3.80em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 50%;
+        left:23%;
+        color:#f1f0ee!important;
+    }
+}
+
+
+    @media (max-width: 733px) {
+
+        
+    .contact-head{
+        position: absolute;
+        font-size: 3em ;
+        top: 42%;
+        left:42%;
+    
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 2em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 50%;
+        left:35%;
+        color:#f1f0ee!important;
+    }
+}
+    @media (max-width: 540px) {
+
+        
+    .contact-head{
+        position: absolute;
+        font-size: 3.5em;
+        top: 43%;
+        left:35%;
+      
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 2.55em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 51%;
+        left:23%;
+        color:#f1f0ee!important;
+    }
+}
+
+
+/* 540 end */
+
+
+    @media (max-width: 430px) {
+
+        
+    .contact-head{
+        position: absolute;
+        font-size: 3.5em;
+        top: 43%;
+        left:27%;
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 2.55em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 49%;
+        left:12%;
+        color:#f1f0ee!important;
+    }
+}
+
+
+/* 430 end */
+
+
+@media (max-width: 412px) {
+    
+    .page_header{
+        background-image: url(../../img/contact/1.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top ;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 800px;
+        position: relative;
+        z-index: 1;
+        mix-blend-mode: luminosity;
+        
+      }
+    .contact-head{
+        position: absolute;
+        font-size: 3.5em;
+        top: 50%;
+        left:24%;
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 2.55em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 60%;
+        left:10%;
+        color:#f1f0ee!important;
+    }
+}
+
+/* 412 end  */
+
+
+@media (max-width: 320px) {
+    
+    .page_header{
+        background-image: url(../../img/contact/6.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: top ;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 800px;
+        position: relative;
+        z-index: 1;
+      
+        
+      }
+    .contact-head{
+        position: absolute;
+        top: 26%;
+        left:22%;
+    
+    }
+    
+    .contact-para
+    {
+        position: absolute;
+        font-size: 2em;
+        text-shadow: 1px 1px 10px #000000;
+        font-weight: 500;
+        font-style: oblique;
+        top: 33%;
+        left:15%;
+        color:#f1f0ee!important;
+    }
+}

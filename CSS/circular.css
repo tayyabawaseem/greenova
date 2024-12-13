@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.menu {
+  width: 60px; /* Width for the sidebar */
+  background-color: #2d683c;
+  position: fixed;
+  height: 45%; /* Full height */
+  top: 30%;
+  left: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the sidebar is on top */
+  transform: translateX(-100%); /* Hide sidebar by default */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.menu.active {
+  transform: translateX(0); /* Show sidebar */
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li {
+  margin: 20px 0; /* Spacing between icons */
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px; /* Adjust the icon size */
+  display: block;
+  text-align: center;
+}
+
+.toggle-btn {
+  width: 50px;
+  height: 50px;
+  background-color:#2d683c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000; /* Ensure the toggle button is above the sidebar */
+  transition: opacity 0.3s ease; /* Smooth transition for hiding */
+}
+
+.toggle-btn.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent clicks when hidden */
+}
+
+
+.toggle-btn .btn-text {
+  font-size: 14px; /* Adjust as needed */
+font-family: monospace;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase; /* Make the text all uppercase */
+  text-align: center; /* Center the text */
+  padding: 5px 10px; /* Padding to fit the text */
+}
+
+
+
+

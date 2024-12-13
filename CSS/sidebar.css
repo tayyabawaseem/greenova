@@ -1,0 +1,67 @@
+.sidebar {
+    position: fixed;
+    top: 50%;
+    left: -60px; /* Hide the sidebar initially */
+    transform: translateY(-50%);
+    background-color: #333;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s;
+    width: 60px; /* Adjusted width to fit icons */
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 50%;
+    right: -20px; /* Position the button outside the sidebar */
+    transform: translateY(-50%);
+    background-color: #ff7f50;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.toggle-btn:hover {
+    background-color: #ff6347;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-btn i {
+    transition: transform 0.3s;
+}
+
+.toggle-btn.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.icon:hover {
+    background-color: #555;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.icon i {
+    font-size: 20px;
+}
