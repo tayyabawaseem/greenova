@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+    color: #2d683c;
+}
+
+body {
+    background: #2d683c;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title
+{
+    text-align: center;
+    /* font-size: 30px; */
+    letter-spacing: 0.5px;
+    font-family: 'Pacifico', cursive;
+    /* color: #A4783F; */
+    margin-bottom: 20px;
+    color: #f7f3ee;
+    
+
+}
+.card {
+    border-radius: 20px; /* Rounded corners for the card */
+    border:none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Smooth transitions */
+    overflow: hidden; /* Hide overflow to maintain rounded corners */
+}
+
+.card:hover {
+    border: 5px solid #9b8404; /* Border color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+}
+
+.card-img-top {
+    width: 100%; /* Make image width 100% of the card */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the card area */
+    border-top-left-radius: 15px; /* Round top-left corner of the image */
+    border-top-right-radius: 15px; /* Round top-right corner of the image */
+}
+h5
+{
+    font-weight: bolder;
+}
+
+p{
+    text-align: justify;
+}
+

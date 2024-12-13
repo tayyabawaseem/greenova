@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+/* Global Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #2d683c;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 50%;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #A4783F, #be853a);
+    border-radius: 10px;
+    border-color: #adadad;
+    border-style: ridge;
+    border-width: 1.5px;
+  
+  }
+
+body {
+    background-color: #2d683c;
+    font-family: 'Roboto', sans-serif;
+}
+
+#section-wrapper {
+    width: 100%;
+    padding: 10px;
+}
+
+.form-wrap {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    border-radius: 15px;
+    background: #ecf0f3;
+    margin-top: 5%;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+    color: #a4783f;
+    margin-bottom: 20px;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-fields input,
+.form-fields textarea {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    color: #2d683c;
+    padding: 15px;
+    width: 100%;
+}
+
+.form-fields textarea {
+    height: 120px;
+    resize: none;
+}
+
+.form-group {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 15px;
+    box-shadow: inset 4px 4px 6px #cbced1, inset -4px -4px 6px #ffffff;
+}
+
+.submit-button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    transition: 0.5s;
+    background: linear-gradient(360deg, #1e6853, #1ca23c);
+    border-radius: 25px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* Ensure ::before is positioned correctly */
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+    visibility: hidden;
+    border-radius: 25px;
+}
+
+.submit-button:hover::before {
+    left: 0;
+    visibility: visible;
+}
+
+/* File Upload Input */
+input[type="file"] {
+    padding: 10px;
+}
+
+/* Placeholder Styles */
+input::placeholder,
+textarea::placeholder {
+    color: #2d683c;
+}
+
+.lab {
+    color: #2d683c;
+}
+
+/* Remove Background Color from Select Dropdown */
+select {
+    padding: 15px;
+    font-size: 16px;
+    color: #2d683c;
+    border: 0px solid #ddd;
+    border-radius: 15px;
+    background: transparent;
+}
+
+/* Responsive CSS Adjustments for Small Screens */
+@media only screen and (max-width: 767px) {
+    .form-wrap {
+        padding: 20px 10px;
+        border-radius: 15px;
+    }
+
+    .form-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .form-fields input,
+    .form-fields textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .submit-button {
+        height: 45px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .form-title {
+        font-size: 20px;
+    }
+
+    .form-fields input,
+    .form-fields textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-button {
+        height: 40px;
+        font-size: 13px;
+    }
+}

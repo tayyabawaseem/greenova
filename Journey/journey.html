@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey || Greenova</title>
+
+    <link rel="shortcut icon" href="../Images/Logo/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/circular.css">
+    <link rel="stylesheet" href="../Other/Book/video.css">
+</head>
+<body>
+
+        <!--=============== Banner End ===============-->
+  <!-- Small Sidebar -->
+  <div class="menu" id="sidebar">
+    <ul>
+        <li><a href="../index.html"><i class="fas fa-home fa-beat-fade"></i></a></li>
+        <li><a href="PlantsGuide.html"><i class="fa-brands fa-pagelines" style="color: #fbfefd;"></i></a></li>
+        <li><a href="../Other/Book/Plantcare.html"><i class="fa-solid fa-tree fa-beat-fade" style="color: #fcfcfc;"></i></a></li>
+        <li><a href="journey.html"><i class="fa-solid fa-arrow-up-from-bracket fa-beat-fade" style="color: #ffffff;"></i></a></li>
+        <li><a href="Community.html"><i class="fa-solid fa-users fa-beat-fade" style="color: #ffffff;"></i></a></li>
+        <!-- <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li> -->
+    </ul>
+</div>
+
+<!-- Toggle Button -->
+<div class="toggle-btn" id="toggle-btn">
+  <i class="fa-solid fa-xmark fa-beat-fade" style="color: #ffffff;"></i>
+</div>
+
+
+     <!-- Trigger Button for Modal -->
+     <button id="openModalBtn" class="custom-button-style">
+        <span class="typewriter-animation-style text-light">View Product Video</span>
+        <i class="fas fa-video hidden-video-icon-style text-light"></i>
+      </button>
+      
+      <!-- Modal Structure -->
+      <div id="videoModal" class="modal-unique-background">
+        <div class="modal-content-structure">
+            <span class="modal-close-button">&times;</span>
+            <h2>Watch Product Video</h2>
+            <p>Click the video below to learn more about how this product works.</p>
+            <div class="video-container-layout">
+                <iframe id="videoIframe" src="../Videos/5 (3).mp4" frameborder="0" allowfullscreen></iframe>
+            </div>
+      
+            <div class="modal-unique-buttons">
+                <button id="buyProductBtn" class="thming-btn">
+                    <a href="../Html/Fertilizers/Potting.html" class="no-decorate">Buy This Product</a>
+                </button>
+                <button id="moreVideosBtn" class="thming-btn">
+                    <a class="anchor-btn no-decorate" href="../Other/Tips.html">Watch More Videos</a>
+                </button>
+            </div>
+        </div>
+      </div>
+      
+      <script>
+        var modal = document.getElementById("videoModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementsByClassName("modal-close-button")[0];
+        var videoIframe = document.getElementById("videoIframe");
+      
+        btn.onclick = function () {
+            modal.style.display = "block";
+            videoIframe.src += "?autoplay=1"; // Add autoplay parameter
+        }
+      
+        span.onclick = function () {
+            modal.style.display = "none";
+            stopVideo();
+        }
+      
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                stopVideo();
+            }
+        }
+      
+        function stopVideo() {
+            videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+        }
+      
+        // Existing functions...
+        function toggleTextAndIcon() {
+            const typewriter = document.querySelector('.typewriter-animation-style');
+            const videoIcon = document.querySelector('.hidden-video-icon-style');
+            const isTextVisible = typewriter.style.display !== 'none';
+      
+            if (isTextVisible) {
+                typewriter.style.display = 'none';
+                videoIcon.style.display = 'inline';
+            } else {
+                typewriter.style.display = 'inline-block';
+                videoIcon.style.display = 'none';
+            }
+        }
+      
+        function handleButtonFade() {
+            btn.classList.remove('custom-button-style-hidden');
+            setTimeout(() => {
+                btn.classList.add('custom-button-style-fade-in');
+            }, 50);
+            setTimeout(() => {
+                btn.classList.remove('custom-button-style-fade-in');
+                btn.classList.add('custom-button-style-hidden');
+            }, 8000);
+        }
+      
+        window.onload = function () {
+            setTimeout(function () {
+                handleButtonFade();
+                setInterval(() => {
+                    toggleTextAndIcon();
+                    handleButtonFade();
+                }, 10000);
+            }, 1000);
+        }
+        function stopVideo() {
+          videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+      }
+        </script>
+
+
+    <section id="section-wrapper">
+        <div class="form-wrap">
+            <form id="gardeningForm" class="needs-validation" action="#" method="POST" novalidate>
+                <h2 class="form-title">Share Your Gardening Journey!</h2>
+                <div class="form-fields">
+                    <div class="form-group">
+                        <input type="text" id="fname" class="fname" placeholder="Full Name" required>
+                        <div class="invalid-feedback">Please enter your name</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" class="lname" placeholder="Email" required>
+                        <div class="invalid-feedback">Please enter a valid email address</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="type" class="lab px-3 pt-2">Type of Content:</label>
+                        <select class="form-control" id="type" name="type" required>
+                            <option value="" disabled selected>Select content type</option>
+                            <option value="photos">Photos</option>
+                            <option value="videos">Videos</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a content type.</div>
+                    </div>
+                    <div class="form-group">
+                        <input type="file" id="file" class="form-control-file" name="file" required>
+                        <div class="invalid-feedback">Please upload a file.</div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Write your Content" required></textarea>
+                        <div class="invalid-feedback">Please provide some content.</div>
+                    </div>
+                </div>
+                <input type="submit" value="Send Message" class="submit-button">
+            </form>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Bootstrap validation
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            });
+        })();
+
+        // Restrict file type based on content type selection
+        document.getElementById('type').addEventListener('change', function() {
+            const fileInput = document.getElementById('file');
+            const selectedType = this.value;
+
+            if (selectedType === 'photos') {
+                fileInput.setAttribute('accept', 'image/*');
+            } else if (selectedType === 'videos') {
+                fileInput.setAttribute('accept', 'video/*');
+            }
+        });
+
+        // Save gallery items to local storage
+        function saveGallery(name, email, type, content, fileData, fileType) {
+            const items = JSON.parse(localStorage.getItem('galleryItems')) || [];
+            items.push({ name, email, type, content, fileData, fileType });
+            localStorage.setItem('galleryItems', JSON.stringify(items));
+        }
+
+        // Save form data to local storage
+        function saveFormData() {
+            const name = document.getElementById('fname').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const content = document.getElementById('message').value;
+
+            localStorage.setItem('formData', JSON.stringify({ name, email, type, content }));
+        }
+
+        // Load form data from local storage
+        function loadFormData() {
+            const formData = JSON.parse(localStorage.getItem('formData'));
+
+            if (formData) {
+                document.getElementById('fname').value = formData.name;
+                document.getElementById('email').value = formData.email;
+                document.getElementById('type').value = formData.type;
+                document.getElementById('message').value = formData.content;
+            }
+        }
+
+        document.getElementById('gardeningForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Form data
+            const name = document.getElementById('fname').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const content = document.getElementById('message').value;
+            const fileInput = document.getElementById('file');
+
+            if (!name || !email || !type || !content || !fileInput.files.length) {
+                alert('Please fill out all fields and select a file.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const acceptedTypes = type === 'photos' ? ['image/jpeg', 'image/png', 'image/jpg'] : ['video/mp4'];
+
+            if (!acceptedTypes.includes(file.type)) {
+                alert(`Please upload a valid ${type} file.`);
+                return;
+            }
+
+            const reader = new FileReader();
+
+    reader.onload = function(e) {
+        saveGallery(name, email, type, content, e.target.result, file.type);
+        saveFormData(); // Save form data persistently
+        alert('Your content has been submitted!');
+        document.getElementById('gardeningForm').reset();
+        window.location.href = 'community.html'; // Redirect to community.html
+    };
+
+    reader.readAsDataURL(file);
+});
+
+       
+    </script>
+
+    <script src="js/cir.js"></script>
+</body>
+</html>

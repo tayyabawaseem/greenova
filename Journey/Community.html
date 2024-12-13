@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Gallery || Greenova</title>
+    <link rel="shortcut icon" href="../Images/Logo/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <link rel="stylesheet" href="css/comu.css">
+    <link rel="stylesheet" href="css/circular.css">
+    <link rel="stylesheet" href="../Other/Book/video.css">
+</head>
+<body>
+
+<!--=============== Banner End ===============-->
+
+
+
+
+
+
+
+
+
+
+  <!-- Small Sidebar -->
+  <div class="menu" id="sidebar">
+    <ul>
+        <li><a href="../index.html"><i class="fas fa-home fa-beat-fade"  style="color: #fbfefd;"></i></a></li>
+        <li><a href="PlantsGuide.html"><i class="fa-brands fa-pagelines fa-beat-fade" style="color: #fbfefd;"></i></a></li>
+        <li><a href="../Other/Book/Plantcare.html"><i class="fa-solid fa-tree fa-beat-fade" style="color: #fcfcfc;"></i></a></li>
+        <li><a href="journey.html"><i class="fa-solid fa-arrow-up-from-bracket fa-beat-fade" style="color: #ffffff;"></i></a></li>
+        <li><a href="Community.html"><i class="fa-solid fa-users fa-beat-fade" style="color: #ffffff;"></i></a></li>
+        <!-- <li><a href="#"><i class="fas fa-sign-out-alt"></i></a></li> -->
+    </ul>
+</div>
+
+<!-- Toggle Button -->
+<div class="toggle-btn" id="toggle-btn">
+  <i class="fa-solid fa-xmark fa-beat-fade" style="color: #ffffff;"></i>
+</div>
+    <div class="container mt-5">
+        <h1 class="mb-4 title fs-1">Our Community Garden</h1>
+        <div class="row" id="gallery"></div>
+    </div>
+
+
+    
+     <!-- Trigger Button for Modal -->
+ <button id="openModalBtn" class="custom-button-style">
+  <span class="typewriter-animation-style">View Product Video</span>
+  <i class="fas fa-video hidden-video-icon-style"></i>
+</button>
+
+<!-- Modal Structure -->
+<div id="videoModal" class="modal-unique-background">
+  <div class="modal-content-structure">
+      <span class="modal-close-button">&times;</span>
+      <h2>Watch Product Video</h2>
+      <p>Click the video below to learn more about how this product works.</p>
+      <div class="video-container-layout">
+          <iframe id="videoIframe" src="../Videos/5 (3).mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="modal-unique-buttons">
+          <button id="buyProductBtn" class="thming-btn">
+              <a href="../Html/Fertilizers/Potting.html" class="no-decorate">Buy This Product</a>
+          </button>
+          <button id="moreVideosBtn" class="thming-btn">
+              <a class="anchor-btn no-decorate" href="../Other/Tips.html">Watch More Videos</a>
+          </button>
+      </div>
+  </div>
+</div>
+
+<script>
+  var modal = document.getElementById("videoModal");
+  var btn = document.getElementById("openModalBtn");
+  var span = document.getElementsByClassName("modal-close-button")[0];
+  var videoIframe = document.getElementById("videoIframe");
+
+  btn.onclick = function () {
+      modal.style.display = "block";
+      videoIframe.src += "?autoplay=1"; // Add autoplay parameter
+  }
+
+  span.onclick = function () {
+      modal.style.display = "none";
+      stopVideo();
+  }
+
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+          stopVideo();
+      }
+  }
+
+  function stopVideo() {
+      videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+  }
+
+  // Existing functions...
+  function toggleTextAndIcon() {
+      const typewriter = document.querySelector('.typewriter-animation-style');
+      const videoIcon = document.querySelector('.hidden-video-icon-style');
+      const isTextVisible = typewriter.style.display !== 'none';
+
+      if (isTextVisible) {
+          typewriter.style.display = 'none';
+          videoIcon.style.display = 'inline';
+      } else {
+          typewriter.style.display = 'inline-block';
+          videoIcon.style.display = 'none';
+      }
+  }
+
+  function handleButtonFade() {
+      btn.classList.remove('custom-button-style-hidden');
+      setTimeout(() => {
+          btn.classList.add('custom-button-style-fade-in');
+      }, 50);
+      setTimeout(() => {
+          btn.classList.remove('custom-button-style-fade-in');
+          btn.classList.add('custom-button-style-hidden');
+      }, 8000);
+  }
+
+  window.onload = function () {
+      setTimeout(function () {
+          handleButtonFade();
+          setInterval(() => {
+              toggleTextAndIcon();
+              handleButtonFade();
+          }, 10000);
+      }, 1000);
+  }
+  function stopVideo() {
+    videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+}
+  </script>
+
+      <!-- Card Start -->
+      <div class="container mt-5">    
+        <div class="card-group">
+          <div class="card mb-3 m-3">
+            <img src="news/news-g-2.jpg" class="card-img-top w-100" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold text-center">Emma’s Urban</h5>
+              <p class="card-text">Gardening has been a transformative experience for me. I started with just a few potted plants on my balcony, and now I've expanded to a full-fledged garden in my backyard. I love the process of nurturing plants from seeds to full bloom.  It's not just about the plants; it's about the mindfulness and patience that come with gardening</p>
+            </div>
+          </div>
+          <div class="card mb-3 m-3">
+            <img src="news/news-g-3.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Raj’s </h5>
+              <p class="card-text">TRaj is dedicated to sustainable gardening practices. He’s implemented composting, rainwater harvesting, and organic fertilizers. Raj shares his journey of reducing his garden’s carbon footprint and encouraging others to adopt eco-friendly methods.Her tips include using vertical gardening techniques and choosing low-maintenance plants.</p>
+            </div>
+          </div>
+          <div class="card mb-3 m-3">
+            <img src="news/news-g-4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Alex’s</h5>
+              <p class="card-text">Alex has a small urban balcony where they’ve managed to grow a variety of herbs and vegetables in containers. Alex shares tips on selecting the right potting mix, maximizing limited space, and keeping plants healthy in a confined area.Her tips include using vertical gardening techniques and choosing low-maintenance plants.</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div>
+        <div class="card-group">
+          <div class="card mb-3 m-3">
+            <img src="news/news-h1-4.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Jordan’s</h5>
+              <p class="card-text">Jordan, with a spacious backyard, has created a beautiful garden filled with a mix of flowers and vegetables. Jordan’s experience focuses on landscape design, maintaining a diverse garden, and seasonal planting schedules.</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card mb-3 m-3">
+            <img src="news/news-h1-6.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Sam’s</h5>
+              <p class="card-text">Sam’s garden is inspired by traditional cottage styles, with a focus on colorful flower beds and charming garden structures. Sam discusses the importance of creating a garden that feels like a cozy retreat and shares favorite flowering plants.</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+          <div class="card mb-3 m-3">
+            <img src="news/news-h1-8.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">Jamie’s</h5>
+              <p class="card-text"> Jamie has a dedicated vegetable garden where they grow a wide variety of produce. Jamie’s tips include starting seeds, maintaining soil health, and dealing with common garden pests.how they cultivate a variety of herbs, their favorite recipes.</p>
+              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      
+  <!-- Card End -->
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Load saved gallery items from local storage and display in Bootstrap cards
+        function loadGallery() {
+            const gallery = document.getElementById('gallery');
+            const items = JSON.parse(localStorage.getItem('galleryItems')) || [];
+
+            items.forEach(item => {
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col-md-4 mb-4';
+
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+
+                let mediaElement;
+                if (item.fileType.startsWith('image/')) {
+                    mediaElement = document.createElement('img');
+                    mediaElement.className = 'card-img-top';
+                    mediaElement.src = item.fileData;
+                    mediaElement.alt = 'User-submitted photo';
+                } else if (item.fileType.startsWith('video/')) {
+                    mediaElement = document.createElement('video');
+                    mediaElement.className = 'card-img-top';
+                    mediaElement.src = item.fileData;
+                    mediaElement.controls = true;
+                }
+
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+
+                const cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.textContent = `NAME: ${item.name}`;
+
+                // const cardSubTitle = document.createElement('h6');
+                // cardSubTitle.className = 'card-subtitle mb-2 text-muted';
+                // cardSubTitle.textContent = `Content Type: ${item.type}`;
+
+                const cardText = document.createElement('p');
+                cardText.className = 'card-text';
+                cardText.textContent =` DESCRIPTION ${item.content}`;
+
+                cardDiv.appendChild(mediaElement);
+                cardBody.appendChild(cardTitle);
+                // cardBody.appendChild(cardSubTitle);
+                cardBody.appendChild(cardText);
+                cardDiv.appendChild(cardBody);
+                colDiv.appendChild(cardDiv);
+                gallery.appendChild(colDiv);
+            });
+        }
+
+        // Initial load of gallery items
+        loadGallery();
+    </script>
+
+    <script src="js/cir.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+body {
+    background-color: #2d683c;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: top 0.5s ease;
+}
+
+.container.moved {
+    top: 0;
+    transform: none;
+}
+.plant-guide-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plant-guide-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+}
+
+.plant-guide-card h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #388e3c;
+}
+
+.plant-guide-card p.lead {
+    font-size: 1.2rem;
+    color: #a4783f;
+    margin-bottom: 1.5rem;
+}
+
+.custom-select {
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-select:focus {
+    border-color: #388e3c;
+    box-shadow: 0 0 0 0.2rem rgba(56, 142, 60, 0.25);
+}
+
+#findPlantsBtn {
+    background-color: #388e3c;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#findPlantsBtn:hover {
+    background-color: #2e7d32;
+    transform: scale(1.05);
+}
+
+#findPlantsBtn:focus {
+    outline: none;
+}
+
+#plantResults {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#plantResults h4 {
+    font-size: 1.8rem;
+    color: #a4783f;
+    margin-bottom: 1rem;
+}
+
+#plantResults ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#plantResults ul li {
+    background: #ffffff;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.plant-info {
+    border-radius: 8px;
+    background: rgb(252, 255, 253);
+    border: 2px solid #81c784;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    color: #a4783f;
+
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.plant-info.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.plant-info h5 {
+    font-size: 1.5rem;
+    color: #388e3c;
+    margin-bottom: 0.5rem;
+}
+
+.plant-info p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.plant-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.plant-info ul li {
+    font-size: 1.1rem;
+}
+#plantResults {
+    display: none; /* Initially hide the results div */
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Guide</title>
+
+    <link rel="shortcut icon" href="../Images/Logo/Logo.png" type="image/x-icon">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/guide.css">
+    <link rel="stylesheet" href="../Journey/css/circular.css">
+    <link rel="stylesheet" href="../Other/Book/video.css">
+</head>
+<body>
+
+    <div class="menu" id="sidebar">
+        <ul>
+            <li><a href="../index.html"><i class="fas fa-home fa-beat-fade" style="color: #057a28;"></i></a></li>
+            <li><a href="PlantsGuide.html"><i class="fa-brands fa-pagelines fa-beat-fade" style="color:#057a28;"></i></a></li>
+            <li><a href="../Other/Book/Plantcare.html"><i class="fa-solid fa-tree fa-beat-fade" style="color:#057a28;"></i></a></li>
+            <li><a href="../Journey/journey.html"><i class="fa-solid fa-arrow-up-from-bracket fa-beat-fade" style="color:#057a28;"></i></a></li>
+            <li><a href="../Journey/Community.html"><i class="fa-solid fa-users fa-beat-fade" style="color:#057a28;"></i></a></li>
+        </ul>
+    </div>
+    
+    <!-- Toggle Button -->
+    <div class="toggle-btn" id="toggle-btn">
+      <i class="fa-solid fa-xmark fa-beat-fade" style="color: #ffffff;"></i>
+    </div>
+
+     <!-- Trigger Button for Modal -->
+ <button id="openModalBtn" class="custom-button-style">
+    <span class="typewriter-animation-style">View Product Video</span>
+    <i class="fas fa-video hidden-video-icon-style"></i>
+  </button>
+  
+  <!-- Modal Structure -->
+  <div id="videoModal" class="modal-unique-background">
+    <div class="modal-content-structure">
+        <span class="modal-close-button">&times;</span>
+        <h2>Watch Product Video</h2>
+        <p>Click the video below to learn more about how this product works.</p>
+        <div class="video-container-layout">
+            <iframe id="videoIframe" src="../Videos/5 (3).mp4" frameborder="0" allowfullscreen></iframe>
+        </div>
+  
+        <div class="modal-unique-buttons">
+            <button id="buyProductBtn" class="thming-btn">
+                <a href="../Html/Fertilizers/Potting.html" class="no-decorate">Buy This Product</a>
+            </button>
+            <button id="moreVideosBtn" class="thming-btn">
+                <a class="anchor-btn no-decorate" href="../Other/Tips.html">Watch More Videos</a>
+            </button>
+        </div>
+    </div>
+  </div>
+  
+  <script>
+    var modal = document.getElementById("videoModal");
+    var btn = document.getElementById("openModalBtn");
+    var span = document.getElementsByClassName("modal-close-button")[0];
+    var videoIframe = document.getElementById("videoIframe");
+  
+    btn.onclick = function () {
+        modal.style.display = "block";
+        videoIframe.src += "?autoplay=1"; // Add autoplay parameter
+    }
+  
+    span.onclick = function () {
+        modal.style.display = "none";
+        stopVideo();
+    }
+  
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+            stopVideo();
+        }
+    }
+  
+    function stopVideo() {
+        videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+    }
+  
+    // Existing functions...
+    function toggleTextAndIcon() {
+        const typewriter = document.querySelector('.typewriter-animation-style');
+        const videoIcon = document.querySelector('.hidden-video-icon-style');
+        const isTextVisible = typewriter.style.display !== 'none';
+  
+        if (isTextVisible) {
+            typewriter.style.display = 'none';
+            videoIcon.style.display = 'inline';
+        } else {
+            typewriter.style.display = 'inline-block';
+            videoIcon.style.display = 'none';
+        }
+    }
+  
+    function handleButtonFade() {
+        btn.classList.remove('custom-button-style-hidden');
+        setTimeout(() => {
+            btn.classList.add('custom-button-style-fade-in');
+        }, 50);
+        setTimeout(() => {
+            btn.classList.remove('custom-button-style-fade-in');
+            btn.classList.add('custom-button-style-hidden');
+        }, 8000);
+    }
+  
+    window.onload = function () {
+        setTimeout(function () {
+            handleButtonFade();
+            setInterval(() => {
+                toggleTextAndIcon();
+                handleButtonFade();
+            }, 10000);
+        }, 1000);
+    }
+    function stopVideo() {
+      videoIframe.src = videoIframe.src.split('?')[0]; // Reset the source to stop the video
+  }
+    </script>
+
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card plant-guide-card p-4">
+                    <h2 class="card-title text-center">Find the Perfect Plants for Your Garden</h2>
+                    <p class="lead text-center">Choose your climate and soil type to find the most suitable plants.</p>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="climateSelect" class="form-label">Climate Zone</label>
+                                <select id="climateSelect" class="form-control custom-select">
+                                    <option value="" disabled selected>Select Climate Zone</option>
+                                    <option value="tropical">Tropical</option>
+                                    <option value="arid">Arid</option>
+                                    <option value="temperate">Temperate</option>
+                                    <option value="cold">Cold</option>
+                                    <!-- <option value="subarctic">Subarctic</option>
+                                    <option value="mediterranean">Mediterranean</option>
+                                    <option value="highland">Highland</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="soilTypeSelect" class="form-label">Soil Type</label>
+                                <select id="soilTypeSelect" class="form-control custom-select">
+                                    <option value="" disabled selected>Select Soil Type</option>
+                                    <option value="sandy">Sandy</option>
+                                    <option value="clay">Clay</option>
+                                    <option value="loamy">Loamy</option>
+                                    <option value="silty">Silty</option>
+                                    <!-- <option value="peaty">Peaty</option>
+                                    <option value="chalky">Chalky</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="findPlantsBtn" class="btn btn-success btn-lg">Find Best Plants</button>
+                    <div id="plantResults" class="mt-4">
+                        <!-- Plant results will be displayed here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/guide.js"></script>
+    <script src="../Javascript/cir.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+      /* Existing styles */
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 50%;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #A4783F, #be853a);
+        border-radius: 10px;
+        border-color: #adadad;
+        border-style: ridge;
+        border-width: 1.5px;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* The Modal (background) */
+    .modal-unique-background {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Modal Content Box */
+    .modal-content-structure {
+        background-color: #fff;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 90%;
+        max-width: 800px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        z-index: 1001;
+    }
+
+    /* Close Button */
+    .modal-close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .modal-close-button:hover,
+    .modal-close-button:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Styling for Video Container */
+    .video-container-layout {
+        margin-top: 20px;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container-layout iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Button Styles */
+    .custom-button-style {
+        background-color: #0a9511;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        position: absolute; /* This can be changed to relative if needed */
+        right: 0;
+        margin: 10px;
+        margin-top: 13%;       display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 180px;
+        width: 50px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 999;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+
+    .custom-button-style-fade-in {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+
+    .custom-button-style-hidden {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
+    }
+
+    .custom-button-style:hover {
+        background-color: #065d0a;
+    }
+
+    /* Remove text decoration from anchor */
+    .no-decorate {
+        text-decoration: none;
+        color: inherit;
+    }
+    .no-decorate:hover
+    {
+        color: #b3fab7;
+    }
+    /* Typewriter effect */
+    .typewriter-animation-style {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: .15em solid orange;
+        animation: typing-animation 5s steps(30, start), blink-caret-animation .75s step-end infinite;
+        transform: rotate(90deg);
+        padding-left: 9em;
+    }
+
+    @keyframes typing-animation {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 100%;
+        }
+    }
+
+    @keyframes blink-caret-animation {
+        from,
+        to {
+            border-color: transparent;
+        }
+
+        50% {
+            border-color: orange;
+        }
+    }
+
+    .hidden-video-icon-style {
+        display: none;
+        font-size: 24px;
+        margin-top: 65px;
+        transform: rotate(90deg);
+    }
+
+    .thming-btn {
+        background-color: #0a9511;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+        margin: 10px 0;
+    }
+
+    .thming-btn:hover {
+        background-color: #065d0a;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .thming-btn {
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .thminging-btn {
+            padding: 8px 10px;
+            font-size: 12px;
+        }
+    }
